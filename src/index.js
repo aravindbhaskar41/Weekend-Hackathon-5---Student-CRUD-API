@@ -80,7 +80,7 @@ app.put('/api/student/:id',(req,res)=>{
     //console.log(newObj);
     studentArray.splice(index,1,newObj);
     //console.log(studentArray);
-    res.send(studentArray);
+    res.send(newObj);
 
 })
 
@@ -89,7 +89,7 @@ app.delete('/api/student/:id',(req,res)=>{
     var id=parseInt(req.params.id);
     var index=studentArray.findIndex(element=>element.id==id);
     if(index===-1){
-        res.status(400).send("Invalid id");
+        res.status(404).send("Invalid id");
         return;
     }
     var obj=studentArray[index];
