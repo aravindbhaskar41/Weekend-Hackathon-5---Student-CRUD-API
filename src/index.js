@@ -51,8 +51,8 @@ app.post('/api/student',(req,res)=>{
         res.status(400).send(validationObj.error.details[0].message);
         return;
     }
-    var obj={...req.body};
-    obj.id=++ID;
+    var obj={"id":++ID};
+    obj={...obj,...req.body};
     console.log(obj);
     studentArray.push(obj);
     res.send({"id":`${obj.id}`});
