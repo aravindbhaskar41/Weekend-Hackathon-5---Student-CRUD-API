@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 // your code goes here
 
-
+app.get('/api/student',(req,res)=>{
+    res.send("Hello There! World ");
+})
 app.listen(port, () => console.log(`App listening on port ${port}!`))
 
 module.exports = app;   
